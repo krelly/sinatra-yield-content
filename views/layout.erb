@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+<%= yield %>
+
+<!--This works-->
+<%#= yield_content :some_key_with_no_content %>
+
+<!--Using default block breaks things-->
+<%= yield_content(:some_key_with_no_content) do %>
+  Default content (This won't be displayed)
+<% end %>
+
+
+
+</body>
+</html>
